@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Money</title>
+</head>
+<body>
+    <h1>Ninja Money</h1>
+    <div class="container">
+        <laber for="">Tu Oro:</label>
+        <h3>{{request.session.monto_oro}}</h3>
+    </div>
+    <hr>
+    <div class="">
+        <form action="process_money" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="farm">
+            <button type="submit">Farm - Find Gold!</button>
+        </form>
+    </div>
+    <hr>
+    <div class="">
+        <form action="process_money" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="cave">
+            <button type="submit">Cave - Find Gold!</button>
+        </form>
+    </div>
+    <hr>
+    <div class="">
+        <form action="process_money" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="house">  
+            <button type="submit">House - Find Gold!</button>
+        </form>
+    </div>
+    <hr>
+    <div class="">
+        <form action="process_money" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="casino">
+            <button type="submit">Casino - Find Gold!</button>
+        </form>
+    </div>
+
+    <hr>
+    <div class="activities">
+        {% for move in request.session.moves %}
+            {% if move.0 < 0 %}
+                <p>Has perdido {{move.0}} oro en {{move.1}} ({{move.2}})</p>
+            {% else %}
+                <p>Has ganado {{move.0}} oro en {{move.1}} ({{move.2}})</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+</body>
+</html>
