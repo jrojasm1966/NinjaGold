@@ -1,0 +1,40 @@
+#flotante .blue {
+    float: left;
+    width: 280px;
+    height: 160px;
+    border: 3px solid blue;
+    margin: 30;
+}
+
+.vertical-scrollable .row {
+    position: absolute;
+    top: 360px;
+    bottom: 20px;
+    left: 60px;
+    height: 360px;
+    width: 90%;
+    border: 3px solid blue;
+    overflow-y: scroll; 
+}
+
+.col-sm-8-green { 
+    color: green; 
+    font-size: 30px; 
+    padding-bottom: 30px; 
+    padding-top: 30px; 
+} 
+
+.col-sm-8-red { 
+    color: red; 
+    font-size: 30px; 
+    padding-bottom: 30px; 
+    padding-top: 30px; 
+} 
+    
+.col-sm-8:nth-child(2n+1) { 
+    background: white; 
+} 
+    
+.col-sm-8:nth-child(2n+2) { 
+    background: black; 
+} 
